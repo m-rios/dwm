@@ -31,7 +31,6 @@ static const Rule rules[] = {
 	 */
 	/* class                instance    title       tags mask     isfloating   monitor */
 	{ "google-chrome",      NULL,       NULL,              1 << 0,       0,           -1 },
-	{ "Alacritty",          NULL,       NULL,              1 << 2,       0,           -1 },
 	{ "Slack",              NULL,       NULL,              1 << 3,       0,           -1 },
 	{ "Zeal",               NULL,       NULL,              1 << 4,       0,           -1 },
 	{ NULL,                 NULL,       "Spotify Premium", 1 << 7,       0,           -1 },
@@ -56,8 +55,8 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY,                       KEY,      view,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      toggleview,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
